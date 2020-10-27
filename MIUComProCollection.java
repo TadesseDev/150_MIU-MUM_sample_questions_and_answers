@@ -1,5 +1,5 @@
 /* this code's are writen and compiled by Tadesse Alemayehu 
-- for any question you might have you can drop it on my email "tadAlem@gmail.com"
+- for any question you might have you can drop it on my email "tadAlem26@gmail.com"
 - or contact me a@ 
         akypee "adesu.alemayehu1" 
         telegram "@jaBrainiac" 
