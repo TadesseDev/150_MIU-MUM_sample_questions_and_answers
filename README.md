@@ -14,8 +14,8 @@
 
 ## Getting Started
 
-- open documents and exercise. 👽
-- use email to answer any questions you might have. 👏
+- Open documents and exercise. 👽
+- use email `tadessedev@gmail.com` for any questions you might have. 👏
 
 ### clone the main branch.
 **Clone the main branch. Create a new base branch and work from there**
@@ -26,8 +26,8 @@
 
 - GitHub: [@tadessedev](https://github.com/Tadesse-Alemayehu) 
 - Twitter: [@tadessedev](https://x.com/TadesseDev)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tadessedev/)
-- Email: tadalem26@gmail.com
+- LinkedIn: [tadessedev](https://www.linkedin.com/in/tadessedev/)
+- Email: tadessedev@gmail.com
 
 ## Show your support
 
