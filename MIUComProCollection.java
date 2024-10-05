@@ -110,12 +110,14 @@ public class MIUComProCollection {
     }
 
     int n_upCount(int[] arr, int n) {
-        int sum = 0;
+        int previousSum = 0;
+        int currentSum = 0;
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
-            if (sum > n && (sum - arr[i]) <= n)
+            currentSum += arr[i];
+            if (currentSum > n && previousSum <= n)
                 count++;
+            previousSum = currentSum;
         }
         return count;
     }
