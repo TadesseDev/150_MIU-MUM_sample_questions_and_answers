@@ -18,7 +18,7 @@ public class MIUComProCollection {
         MIUComProCollectionTEST test = new MIUComProCollectionTEST(mainObject);
         test.nextPerfectSquareTEST();
         test.n_upCountTEST();
-            //    System.out.println(mainObject.primeCount(11,29));
+        test.primeCountTEST();
         //        System.out.println(mainObject.isMadhavint[] { new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, -2, -1}));
         //        System.out.println(mainObject.isInertial(new int[]{-2, -4, -6, -8, -11}));
         //        System.out.println(mainObject.countSquarePairs(new int[]{9}));
@@ -122,7 +122,22 @@ public class MIUComProCollection {
         return count;
     }
 
+    int primeCount(int start, int end) {
+        int count = 0;
+        for (int i = start; i <=end; i++) {
+            int j = 2;
+            while (j < i) {
+                if (i % j == 0)
+                    break;
+                j++;
+            }
+            if (j == i)
+                count++;
+        }
+        return count;
+    }
     // end of class
+    
 }
 
 class MIUComProCollectionTEST {
@@ -149,15 +164,31 @@ class MIUComProCollectionTEST {
 
     void n_upCountTEST() {
         int res1 = mainObject.n_upCount(new int[] { 2, 3, 1, -6, 8, -3, -1, 2 }, 5);
-        int res2 = mainObject.n_upCount(new int[] { 6, 3, 1}, 1);
-        int res3 = mainObject.n_upCount(new int[] { 6, 3, 1}, 0);
-        int res4 = mainObject.n_upCount(new int[] { 6, 3, 1}, -1);
+        int res2 = mainObject.n_upCount(new int[] { 6, 3, 1 }, 1);
+        int res3 = mainObject.n_upCount(new int[] { 6, 3, 1 }, 0);
+        int res4 = mainObject.n_upCount(new int[] { 6, 3, 1 }, -1);
         int res5 = mainObject.n_upCount(new int[] { 0, 8, -6, -7, 10, 5 }, 6);
         if (res1 == 3 && res2 == 1 && res3 == 1 && res4 == 0 && res5 == 2) {
             System.out.println("n_upCountTEST passed");
         } else {
             System.out.println("n_upCountTEST failed");
             System.out.println(res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5);
+        }
+    }
+
+    void primeCountTEST() {
+        int res1 = mainObject.primeCount(10, 30);
+        int res2 = mainObject.primeCount(11, 29);
+        int res3 = mainObject.primeCount(20, 22);
+        int res4 = mainObject.primeCount(1, 1);
+        int res5 = mainObject.primeCount(5, 5);
+        int res7 = mainObject.primeCount(6, 2);
+        int res8 = mainObject.primeCount(-10, 6);
+        if (res1 == 6 && res2 == 6 && res3 == 0 && res4 == 0 && res5 == 1 && res7 == 0 && res8 == 3) {
+            System.out.println("primeCountTEST passed");
+        }else {
+            System.out.println("primeCountTEST failed");
+            System.out.println(res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5 + " " + res7 + " " + res8);
         }
     }
 }
