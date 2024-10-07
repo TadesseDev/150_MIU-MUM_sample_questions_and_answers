@@ -18,7 +18,7 @@ public class MIUComProCollection {
         MIUComProCollectionTEST test = new MIUComProCollectionTEST(mainObject);
         test.nextPerfectSquareTEST();
         test.n_upCountTEST();
-        //        System.out.println(mainObject.primeCount(11,29));
+            //    System.out.println(mainObject.primeCount(11,29));
         //        System.out.println(mainObject.isMadhavint[] { new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, -2, -1}));
         //        System.out.println(mainObject.isInertial(new int[]{-2, -4, -6, -8, -11}));
         //        System.out.println(mainObject.countSquarePairs(new int[]{9}));
