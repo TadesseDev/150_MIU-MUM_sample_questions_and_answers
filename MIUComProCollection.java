@@ -19,7 +19,7 @@ public class MIUComProCollection {
         test.nextPerfectSquareTEST();
         test.n_upCountTEST();
         test.primeCountTEST();
-        test.isMadhavIntTEST();
+        test.isMadhavIntTEST();isInertial
         //        System.out.println(mainObject.isInertial(new int[]{-2, -4, -6, -8, -11}));
         //        System.out.println(mainObject.countSquarePairs(new int[]{9}));
         //        System.out.println(mainObject.PorcupineNumber(139));
