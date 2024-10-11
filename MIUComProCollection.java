@@ -19,7 +19,7 @@ public class MIUComProCollection {
         test.nextPerfectSquareTEST();
         test.n_upCountTEST();
         test.primeCountTEST();
-        //        System.out.println(mainObject.isMadhavint[] { new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, -2, -1}));
+        test.isMadhavintTEST();
         //        System.out.println(mainObject.isInertial(new int[]{-2, -4, -6, -8, -11}));
         //        System.out.println(mainObject.countSquarePairs(new int[]{9}));
         //        System.out.println(mainObject.PorcupineNumber(139));
@@ -124,7 +124,7 @@ public class MIUComProCollection {
 
     int primeCount(int start, int end) {
         int count = 0;
-        for (int i = start; i <=end; i++) {
+        for (int i = start; i <= end; i++) {
             int j = 2;
             while (j < i) {
                 if (i % j == 0)
@@ -136,8 +136,39 @@ public class MIUComProCollection {
         }
         return count;
     }
+
+    int isMadhavint(int[] a) {
+
+        // check if the array is Madhav
+        boolean isMadhave = false;
+        for (int i = 0; i < a.length && !isMadhave; i++) {
+            int sum = i * (i +1)/2;
+            if (sum == a.length)
+                isMadhave = true;
+            else if(sum>a.length)
+                break;
+        }
+        if(!isMadhave)
+            return 0;
+
+        // validate id the elements satisfy madhave
+        int madhaveSum = a[0];
+        int window = 1;
+        for (int i = 0; i < a.length;) {
+            int sum = 0, j = i;
+            while (j < (i + window)) {
+                sum += a[j];
+                j++;
+            }
+            i = j;
+            if (sum != madhaveSum)
+                return 0;
+            window++;
+        }
+        return 1;
+    }
     // end of class
-    
+
 }
 
 class MIUComProCollectionTEST {
@@ -182,13 +213,29 @@ class MIUComProCollectionTEST {
         int res3 = mainObject.primeCount(20, 22);
         int res4 = mainObject.primeCount(1, 1);
         int res5 = mainObject.primeCount(5, 5);
-        int res7 = mainObject.primeCount(6, 2);
-        int res8 = mainObject.primeCount(-10, 6);
-        if (res1 == 6 && res2 == 6 && res3 == 0 && res4 == 0 && res5 == 1 && res7 == 0 && res8 == 3) {
+        int res6 = mainObject.primeCount(6, 2);
+        int res7 = mainObject.primeCount(-10, 6);
+        if (res1 == 6 && res2 == 6 && res3 == 0 && res4 == 0 && res5 == 1 && res6 == 0 && res7 == 3) {
             System.out.println("primeCountTEST passed");
-        }else {
+        } else {
             System.out.println("primeCountTEST failed");
-            System.out.println(res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5 + " " + res7 + " " + res8);
+            System.out.println(res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5 + " " + res6 + " " + res7);
+        }
+    }
+
+    void isMadhavintTEST() {
+        int res1 = mainObject.isMadhavint(new int[] { 2, 1, 1});
+        int res2 = mainObject.isMadhavint(new int[] { 2, 1, 1, 4, -1, -1});
+        int res3 = mainObject.isMadhavint(new int[] { 6, 2, 4, 2, 2, 2, 1, 5, 0, 0 });
+        int res4 = mainObject.isMadhavint(new int[] { 18, 9, 10, 6, 6, 6});
+        int res5 = mainObject.isMadhavint(new int[] { -6, -3, -3, 8, -5, -4});
+        int res6 = mainObject.isMadhavint(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, -2, -1});
+        int res7 = mainObject.isMadhavint(new int[] { 3, 1, 2, 3, 0 });
+        if (res1 == 1 && res2 == 1 && res3 == 1 && res4 == 0 && res5 == 0 && res6 == 1 && res7 == 0) {
+            System.out.println("primeCountTEST passed");
+        } else {
+            System.out.println("primeCountTEST failed");
+            System.out.println(res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5 + " " + res6 + " " + res7);
         }
     }
 }
