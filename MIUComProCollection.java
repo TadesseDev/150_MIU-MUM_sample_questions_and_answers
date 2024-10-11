@@ -141,11 +141,11 @@ public class MIUComProCollection {
 
         // check if the array is Madhav
         boolean isMadhave = false;
-        for (int i = 0; i < a.length && !isMadhave; i++) {
+        for (int i = 0; i < a.length; i++) {
             int sum = i * (i +1)/2;
             if (sum == a.length)
                 isMadhave = true;
-            else if(sum>a.length)
+            else if(sum>a.length || !isMadhave)
                 break;
         }
         if(!isMadhave)
