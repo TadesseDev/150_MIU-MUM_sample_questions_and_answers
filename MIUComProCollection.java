@@ -19,7 +19,7 @@ public class MIUComProCollection {
         test.nextPerfectSquareTEST();
         test.n_upCountTEST();
         test.primeCountTEST();
-        test.isMadhavintTEST();
+        test.isMadhavIntTEST();
         //        System.out.println(mainObject.isInertial(new int[]{-2, -4, -6, -8, -11}));
         //        System.out.println(mainObject.countSquarePairs(new int[]{9}));
         //        System.out.println(mainObject.PorcupineNumber(139));
@@ -128,6 +128,7 @@ public class MIUComProCollection {
             int j = 2;
             while (j < i) {
                 if (i % j == 0)
+
                     break;
                 j++;
             }
@@ -137,18 +138,18 @@ public class MIUComProCollection {
         return count;
     }
 
-    int isMadhavint(int[] a) {
+    int isMadhavInt(int[] a) {
 
         // check if the array is Madhav
         boolean isMadhave = false;
         for (int i = 0; i < a.length; i++) {
-            int sum = i * (i +1)/2;
+            int sum = i * (i + 1) / 2;
             if (sum == a.length)
                 isMadhave = true;
-            else if(sum>a.length || !isMadhave)
+            else if (sum > a.length || !isMadhave)
                 break;
         }
-        if(!isMadhave)
+        if (!isMadhave)
             return 0;
 
         // validate id the elements satisfy madhave
@@ -167,10 +168,13 @@ public class MIUComProCollection {
         }
         return 1;
     }
-    // end of class
+
+    // end of class main class
 
 }
 
+
+// class for running different test cases on a method
 class MIUComProCollectionTEST {
 
     MIUComProCollection mainObject;
@@ -223,14 +227,14 @@ class MIUComProCollectionTEST {
         }
     }
 
-    void isMadhavintTEST() {
-        int res1 = mainObject.isMadhavint(new int[] { 2, 1, 1});
-        int res2 = mainObject.isMadhavint(new int[] { 2, 1, 1, 4, -1, -1});
-        int res3 = mainObject.isMadhavint(new int[] { 6, 2, 4, 2, 2, 2, 1, 5, 0, 0 });
-        int res4 = mainObject.isMadhavint(new int[] { 18, 9, 10, 6, 6, 6});
-        int res5 = mainObject.isMadhavint(new int[] { -6, -3, -3, 8, -5, -4});
-        int res6 = mainObject.isMadhavint(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, -2, -1});
-        int res7 = mainObject.isMadhavint(new int[] { 3, 1, 2, 3, 0 });
+    void isMadhavIntTEST() {
+        int res1 = mainObject.isMadhavInt(new int[] { 2, 1, 1});
+        int res2 = mainObject.isMadhavInt(new int[] { 2, 1, 1, 4, -1, -1});
+        int res3 = mainObject.isMadhavInt(new int[] { 6, 2, 4, 2, 2, 2, 1, 5, 0, 0 });
+        int res4 = mainObject.isMadhavInt(new int[] { 18, 9, 10, 6, 6, 6});
+        int res5 = mainObject.isMadhavInt(new int[] { -6, -3, -3, 8, -5, -4});
+        int res6 = mainObject.isMadhavInt(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, -2, -1});
+        int res7 = mainObject.isMadhavInt(new int[] { 3, 1, 2, 3, 0 });
         if (res1 == 1 && res2 == 1 && res3 == 1 && res4 == 0 && res5 == 0 && res6 == 1 && res7 == 0) {
             System.out.println("primeCountTEST passed");
         } else {
