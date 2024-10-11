@@ -146,7 +146,7 @@ public class MIUComProCollection {
             int sum = i * (i + 1) / 2;
             if (sum == a.length)
                 isMadhave = true;
-            else if (sum > a.length || !isMadhave)
+            if (sum > a.length || isMadhave)
                 break;
         }
         if (!isMadhave)
