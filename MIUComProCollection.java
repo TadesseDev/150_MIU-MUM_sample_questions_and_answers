@@ -214,7 +214,25 @@ public class MIUComProCollection {
         return 1;
     }
 
-    // int countSquarePairs
+
+    int countSquarePairs(int[] a) {
+        if(a.length<2)
+            return 0;
+        let count = 0;
+        for (int i = 0; i < a.length; i++) {
+            
+        }
+
+    }
+
+
+    boolean isPerfectSquare(int a) {
+        for (int i = 0; i * i <= a; i++) {
+            if (i * i == a)
+                return true;
+        }
+        return false;
+    }
     // end of class main class
 
 }
