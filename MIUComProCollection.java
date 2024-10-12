@@ -20,7 +20,7 @@ public class MIUComProCollection {
         test.n_upCountTEST();
         test.primeCountTEST();
         test.isMadhavIntTEST();
-        //        System.out.println(mainObject.isInertial(new int[]{-2, -4, -6, -8, -11}));
+        test.isInertialTEST();
         //        System.out.println(mainObject.countSquarePairs(new int[]{9}));
         //        System.out.println(mainObject.PorcupineNumber(139));
         //        System.out.println(mainObject.isGuthrieSequence(new int[]{8, 4, 2, 1}));
@@ -176,14 +176,42 @@ public class MIUComProCollection {
         int max = a[0];
         int minOdd = a[0];
 
-        for (let i = 0; i < a.length; i++) {
-            if(a[i]>max)
-                max = arr[i];
-            if(a[i]%2==0 && a[i]<minOdd)
-            minOdd=a[i];
-
+        // find max
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > max) {
+                max = a[i];
+            }
         }
 
+        // rule 1
+        // assert max is even
+        if (max % 2 != 0)
+            return 0;
+
+        // find minimum odd value
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] % 2 != 0) {
+                if(minOdd%2==0 || a[i]<minOdd){
+                    minOdd = a[i];
+            }
+            }
+        }
+
+        // rule 2
+        // it contain at least one odd value
+        if(minOdd%2==0)
+            return 0;
+
+        // rule 3
+        // check if minOdd is greater than all even value
+        for(int i=0;i<a.length;i++){
+            if (a[i] % 2 == 0) {
+                // if there is an even value that is greater than the min odd and different from the maximum value
+                if(a[i]>minOdd && a[i]!=max)
+                    return 0;
+            }
+        }
+        return 1;
     }
     // end of class main class
 
@@ -244,12 +272,12 @@ class MIUComProCollectionTEST {
     }
 
     void isMadhavIntTEST() {
-        int res1 = mainObject.isMadhavInt(new int[] { 2, 1, 1});
-        int res2 = mainObject.isMadhavInt(new int[] { 2, 1, 1, 4, -1, -1});
+        int res1 = mainObject.isMadhavInt(new int[] { 2, 1, 1 });
+        int res2 = mainObject.isMadhavInt(new int[] { 2, 1, 1, 4, -1, -1 });
         int res3 = mainObject.isMadhavInt(new int[] { 6, 2, 4, 2, 2, 2, 1, 5, 0, 0 });
-        int res4 = mainObject.isMadhavInt(new int[] { 18, 9, 10, 6, 6, 6});
-        int res5 = mainObject.isMadhavInt(new int[] { -6, -3, -3, 8, -5, -4});
-        int res6 = mainObject.isMadhavInt(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, -2, -1});
+        int res4 = mainObject.isMadhavInt(new int[] { 18, 9, 10, 6, 6, 6 });
+        int res5 = mainObject.isMadhavInt(new int[] { -6, -3, -3, 8, -5, -4 });
+        int res6 = mainObject.isMadhavInt(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, -2, -1 });
         int res7 = mainObject.isMadhavInt(new int[] { 3, 1, 2, 3, 0 });
         if (res1 == 1 && res2 == 1 && res3 == 1 && res4 == 0 && res5 == 0 && res6 == 1 && res7 == 0) {
             System.out.println("primeCountTEST passed");
@@ -258,4 +286,23 @@ class MIUComProCollectionTEST {
             System.out.println(res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5 + " " + res6 + " " + res7);
         }
     }
+
+    void isInertialTEST() {
+        int res1 = mainObject.isInertial(new int[]{1});
+        int res2 = mainObject.isInertial(new int[]{2});
+        int res3 = mainObject.isInertial(new int[]{1, 2, 3, 4});
+        int res4 = mainObject.isInertial(new int[]{1, 1, 1, 1, 1, 1, 2});
+        int res5 = mainObject.isInertial(new int[]{2, 12, 4, 6, 8, 11});
+        int res6 = mainObject.isInertial(new int[]{2, 12, 12, 4, 6, 8, 11});
+        int res7 = mainObject.isInertial(new int[]{-2, -4, -6, -8, -11});
+        int res8 = mainObject.isInertial(new int[]{2, 3, 5, 7});
+        int res9 = mainObject.isInertial(new int[]{2, 4, 6, 8, 10});
+        if (res1 == 0 && res2 == 0 && res3 == 0 && res4 == 1 && res5 == 1 && res6 == 1 && res7 == 0 && res8 == 0 && res9 == 0) {
+            System.out.println("isInertialTEST passed");
+        } else {
+            System.out.println("isInertialTEST failed");
+            System.out.println(res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5 + " " + res6 + " " + res7 + " " + res8 + " " + res9);
+        }
+    }
+
 }
