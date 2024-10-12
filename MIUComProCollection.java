@@ -213,6 +213,8 @@ public class MIUComProCollection {
         }
         return 1;
     }
+
+    // iint countSquarePairs
     // end of class main class
 
 }
