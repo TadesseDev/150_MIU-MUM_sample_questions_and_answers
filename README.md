@@ -1,5 +1,5 @@
 # 150_MIU-MUM_sample_questions_and_answers.
-
+### Currently I'm maintaining this repo, follow the [link for the early updates](https://github.com/TadesseDev/150_MIU-MUM_sample_questions_and_answers/tree/2024). 
 > Common questions ❔ and answers ✔️ to prepare for MIU/MUM entrance tests.
  this question collection is to help students to prepare better for the test they will take before they are admitted 
  to a Maharishi University/maharishi university of management.
