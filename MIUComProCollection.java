@@ -21,7 +21,7 @@ public class MIUComProCollection {
         test.primeCountTEST();
         test.isMadhavIntTEST();
         test.isInertialTEST();
-        //        System.out.println(mainObject.countSquarePairs(new int[]{9}));
+        test.countSquarePairsTest();
         //        System.out.println(mainObject.PorcupineNumber(139));
         //        System.out.println(mainObject.isGuthrieSequence(new int[]{8, 4, 2, 1}));
         //        System.out.println(mainObject.stantonMeasure(new int[]{1, 3, 1, 1, 3, 3, 2, 3, 3, 3, 4}));
@@ -222,7 +222,7 @@ public class MIUComProCollection {
         for (int i = 0; i < a.length; i++) {
             if (a[i] < 1)
                 continue;
-            for (int j = 0; j < a.length; j++) {
+            for (int j = i+1; j < a.length; j++) {
                 if (a[j] < 1)
                     continue;
                 if (a[i] != a[j] && isPerfectSquare(a[i] + a[j]))
@@ -330,6 +330,16 @@ class MIUComProCollectionTEST {
             System.out.println("isInertialTEST failed");
             System.out.println(res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5 + " " + res6 + " " + res7 + " " + res8 + " " + res9);
         }
+    }
+
+    void countSquarePairsTest() {
+        int res1 = mainObject.countSquarePairs(new int[]{9});
+        int res2 = mainObject.countSquarePairs(new int[] { 9, 0, 2, -5, 7 });
+
+        if(res1 == 0 && res2 == 2)
+            System.out.println("countSquarePairsTest passed");
+        else
+            System.out.println("countSquarePairsTest failed");
     }
 
 }
