@@ -19,7 +19,7 @@ public class MIUComProCollection {
         test.nextPerfectSquareTEST();
         test.n_upCountTEST();
         test.primeCountTEST();
-        test.isMadhavIntTEST();isInertial
+        test.isMadhavIntTEST();
         //        System.out.println(mainObject.isInertial(new int[]{-2, -4, -6, -8, -11}));
         //        System.out.println(mainObject.countSquarePairs(new int[]{9}));
         //        System.out.println(mainObject.PorcupineNumber(139));
@@ -169,6 +169,22 @@ public class MIUComProCollection {
         return 1;
     }
 
+
+    int isInertial(int[] a) {
+        if(a.length<2)
+            return 0;
+        int max = a[0];
+        int minOdd = a[0];
+
+        for (let i = 0; i < a.length; i++) {
+            if(a[i]>max)
+                max = arr[i];
+            if(a[i]%2==0 && a[i]<minOdd)
+            minOdd=a[i];
+
+        }
+
+    }
     // end of class main class
 
 }
