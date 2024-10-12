@@ -218,11 +218,18 @@ public class MIUComProCollection {
     int countSquarePairs(int[] a) {
         if(a.length<2)
             return 0;
-        let count = 0;
+        int count = 0;
         for (int i = 0; i < a.length; i++) {
-            
+            if (a[i] < 1)
+                continue;
+            for (int j = 0; j < a.length; j++) {
+                if (a[j] < 1)
+                    continue;
+                if (a[i] != a[j] && isPerfectSquare(a[i] + a[j]))
+                    count++;
+            }
         }
-
+        return count;
     }
 
 
