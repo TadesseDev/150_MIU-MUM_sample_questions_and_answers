@@ -99,6 +99,17 @@ public class MIUComProCollection {
 
     }
 
+    int isPrime(int a) {
+        if(a<1)
+            return 0;
+        int i = 2;
+        while (i < a) {
+            if (a % i == 0)
+                return 0;
+            i++;
+        }
+        return 1;
+    }
     int nextPerfectSquare(int a) {
         int square = 0;
         int i = 0;
@@ -246,10 +257,10 @@ public class MIUComProCollection {
         // considering there always exist a porcupineNumber we can inter a loop and stay init till we found it
         int porcupine = 0;
         for (int i = n + 1; porcupine == 0; i++) {
-            if (n % 10 == 9 && isPrime(n)) {
+            if (n % 10 == 9 && isPrime(n)==1) {
                 int nextPrime = 0;
                 for (int j = i + 1; nextPrime == 0; j++) {
-                    if (isPrime(j))
+                    if (isPrime(j)==1)
                         nextPrime = j;
                 }
                 if (nextPrime % 10 == 9)
@@ -351,13 +362,25 @@ class MIUComProCollectionTEST {
     }
 
     void countSquarePairsTest() {
-        int res1 = mainObject.countSquarePairs(new int[]{9});
+        int res1 = mainObject.countSquarePairs(new int[] { 9 });
         int res2 = mainObject.countSquarePairs(new int[] { 9, 0, 2, -5, 7 });
 
-        if(res1 == 0 && res2 == 2)
+        if (res1 == 0 && res2 == 2)
             System.out.println("countSquarePairsTest passed");
         else
             System.out.println("countSquarePairsTest failed");
+    }
+
+    void PorcupineNumberTest() {
+        int res1 = mainObject.PorcupineNumber(5);
+        int res2 = mainObject.PorcupineNumber(13);
+        int res3 = mainObject.PorcupineNumber(300);
+        int res4 = mainObject.PorcupineNumber(900);
+        int res5 = mainObject.PorcupineNumber(-5);
+        if (res1 == 139 && res2 == 139 && res3 == 1 && res4 == 0 && res5 == 139)
+            System.out.println("PorcupineNumberTest passed");
+        else
+            System.out.println("PorcupineNumberTest failed");
     }
 
 }
