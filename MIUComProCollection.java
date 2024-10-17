@@ -240,6 +240,17 @@ public class MIUComProCollection {
         }
         return false;
     }
+
+
+    int porcupineNumber(int n) {
+        // considering there always exist a porcupineNumber we can inter a loop and stay init till we found it
+        boolean found = false;
+        for (int i = n + 1; !found; i++) {
+            if (n % 10 == 9 && isPrime(n)) {
+                
+            }
+        }
+    }
     // end of class main class
 
 }
