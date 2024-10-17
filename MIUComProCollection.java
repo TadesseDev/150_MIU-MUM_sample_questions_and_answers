@@ -22,7 +22,7 @@ public class MIUComProCollection {
         test.isMadhavIntTEST();
         test.isInertialTEST();
         test.countSquarePairsTest();
-        //        System.out.println(mainObject.PorcupineNumber(139));
+        test.porcupineNumberTest();
         //        System.out.println(mainObject.isGuthrieSequence(new int[]{8, 4, 2, 1}));
         //        System.out.println(mainObject.stantonMeasure(new int[]{1, 3, 1, 1, 3, 3, 2, 3, 3, 3, 4}));
         //        System.out.println(mainObject.sumFactor(new int[]{3, 0, 2, -5, 0}));
@@ -371,12 +371,12 @@ class MIUComProCollectionTEST {
             System.out.println("countSquarePairsTest failed");
     }
 
-    void PorcupineNumberTest() {
-        int res1 = mainObject.PorcupineNumber(5);
-        int res2 = mainObject.PorcupineNumber(13);
-        int res3 = mainObject.PorcupineNumber(300);
-        int res4 = mainObject.PorcupineNumber(900);
-        int res5 = mainObject.PorcupineNumber(-5);
+    void porcupineNumberTest() {
+        int res1 = mainObject.porcupineNumber(5);
+        int res2 = mainObject.porcupineNumber(13);
+        int res3 = mainObject.porcupineNumber(300);
+        int res4 = mainObject.porcupineNumber(900);
+        int res5 = mainObject.porcupineNumber(-5);
         if (res1 == 139 && res2 == 139 && res3 == 1 && res4 == 0 && res5 == 139)
             System.out.println("PorcupineNumberTest passed");
         else
