@@ -257,7 +257,7 @@ public class MIUComProCollection {
         // considering there always exist a porcupineNumber we can inter a loop and stay init till we found it
         int porcupine = 0;
         for (int i = n + 1; porcupine == 0; i++) {
-            if (n % 10 == 9 && isPrime(n)==1) {
+            if (i % 10 == 9 && isPrime(i)==1) {
                 int nextPrime = 0;
                 for (int j = i + 1; nextPrime == 0; j++) {
                     if (isPrime(j)==1)
@@ -374,13 +374,13 @@ class MIUComProCollectionTEST {
     void porcupineNumberTest() {
         int res1 = mainObject.porcupineNumber(5);
         int res2 = mainObject.porcupineNumber(13);
-        // int res3 = mainObject.porcupineNumber(300);
-        // int res4 = mainObject.porcupineNumber(900);
+        int res3 = mainObject.porcupineNumber(300);
+        int res4 = mainObject.porcupineNumber(900);
         int res5 = mainObject.porcupineNumber(-5);
-        if (res1 == 139 && res2 == 139 && res5 == 139)
+        if (res1 == 139 && res2 == 139 && res3 == 139 && res4 == 139 && res5 == 139)
             System.out.println("PorcupineNumberTest passed");
         else
-            System.out.println("PorcupineNumberTest failed", res1, res2,  res5);
+            System.out.println("PorcupineNumberTest failed" + "" + res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5);
     }
 
 }
