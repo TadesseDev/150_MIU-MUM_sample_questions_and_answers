@@ -270,7 +270,7 @@ public class MIUComProCollection {
         return porcupine;
     }
     // end of class main class
-
+    
 }
 
 
@@ -385,6 +385,6 @@ class MIUComProCollectionTEST {
     }
 
     void isGuthrieSequenceTest() {
-        
+
     }
 }
