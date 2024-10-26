@@ -24,7 +24,7 @@ public class MIUComProCollection {
         test.countSquarePairsTest();
         test.porcupineNumberTest();
         test.isGuthrieSequenceTest();
-        //        System.out.println(mainObject.stantonMeasure(new int[]{1, 3, 1, 1, 3, 3, 2, 3, 3, 3, 4}));
+        test.stantonMeasureTest();
         //        System.out.println(mainObject.sumFactor(new int[]{3, 0, 2, -5, 0}));
         //
         //        System.out.println(mainObject.guthrieIndex(3));
@@ -416,14 +416,18 @@ class MIUComProCollectionTEST {
     }
 
     void isGuthrieSequenceTest() {
-        int res1 = mainObject.isGuthrieSequence(new int[] {8, 4, 2, 1});
-        int res2 = mainObject.isGuthrieSequence(new int[] {8, 17, 4, 1});
-        int res3 = mainObject.isGuthrieSequence(new int[] {8, 4, 1});
+        int res1 = mainObject.isGuthrieSequence(new int[] { 8, 4, 2, 1 });
+        int res2 = mainObject.isGuthrieSequence(new int[] { 8, 17, 4, 1 });
+        int res3 = mainObject.isGuthrieSequence(new int[] { 8, 4, 1 });
         int res4 = mainObject.isGuthrieSequence(new int[] { 8, 4, 2 });
 
         if (res1 == 1 && res2 == 0 && res3 == 0 && res4 == 0)
             System.out.println("isGuthrieSequenceTest passed");
         else
             System.out.println("isGuthrieSequenceTest failed" + "" + res1 + " " + res2 + " " + res3 + " " + res4);
+    }
+
+    void stantonMeasureTest() {
+        int res1 = mainObject.stantonMeasure(new int[] { 1, 3, 1, 1, 3, 3, 2, 3, 3, 3, 4 });
     }
 }
