@@ -428,6 +428,15 @@ class MIUComProCollectionTEST {
     }
 
     void stantonMeasureTest() {
-        int res1 = mainObject.stantonMeasure(new int[] { 1, 3, 1, 1, 3, 3, 2, 3, 3, 3, 4 });
+        int res1 = mainObject.stantonMeasure(new int[] {1});
+        int res2 = mainObject.stantonMeasure(new int[] {0});
+        int res3 = mainObject.stantonMeasure(new int[] {3, 1, 1, 4});
+        int res4 = mainObject.stantonMeasure(new int[] {1, 3, 1, 1, 3, 3, 2, 3, 3, 3, 4});
+        int res5 = mainObject.stantonMeasure(new int[] {});
+
+        if (res1 == 1 && res2 == 1 && res3 == 0 && res4 == 6 && res5 == 0)
+            System.out.println("stantonMeasureTest passed");
+        else
+            System.out.println("stantonMeasureTest failed" + "" + res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5);
     }
 }
