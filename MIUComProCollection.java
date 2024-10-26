@@ -401,6 +401,14 @@ class MIUComProCollectionTEST {
     }
 
     void isGuthrieSequenceTest() {
+        int res1 = mainObject.isGuthrieSequence(new int[] {8, 4, 2, 1});
+        int res2 = mainObject.isGuthrieSequence(new int[] {8, 17, 4, 1});
+        int res3 = mainObject.isGuthrieSequence(new int[] {8, 4, 1});
+        int res4 = mainObject.isGuthrieSequence(new int[] { 8, 4, 2 });
 
+        if (res1 == 1 && res2 == 0 && res3 == 0 && res4 == 0)
+            System.out.println("isGuthrieSequenceTest passed");
+        else
+            System.out.println("isGuthrieSequenceTest failed" + "" + res1 + " " + res2 + " " + res3 + " " + res4);
     }
 }
