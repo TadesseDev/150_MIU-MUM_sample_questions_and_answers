@@ -282,6 +282,7 @@ public class MIUComProCollection {
                 num /= 2;
             else
                 num = (num * 3) + 1;
+            i++;
         }
     return 1;
     }
