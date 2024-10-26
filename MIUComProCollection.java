@@ -290,7 +290,7 @@ public class MIUComProCollection {
     int stantonMeasure(int[] a) {
         int n = 0;
         int stanton = 0;
-        for (i = 0; i < a.length; i++) {
+        for (int i = 0; i < a.length; i++) {
             if (a[i] == 1)
                 n++;
         }
