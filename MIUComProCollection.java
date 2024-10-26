@@ -271,9 +271,9 @@ public class MIUComProCollection {
     }
 
     int isGuthrieSequence(int[] a) {
-        if(a.length<1 || a[a.length-1] !=1)
-        return 0;
-    int num = a[0];
+        if(a.length<1 || a[a.length-1] !=1 || a[0]<1)
+            return 0;
+        int num = a[0];
         int i =0;
         while (i < a.length) {
             if (a[i] != num)
